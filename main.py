@@ -46,10 +46,12 @@ while tentativas > 0 and not stop:
 
     palavras_jogadas.append(letra_usuario)
 
+    print('')
     print(f'Tentativas: {tentativas}')
     print('Palavras jogodas: ', end = '')
     print(*palavras_jogadas, sep = ", ")
     print(*vetor_palavra)
+    print('')
 
     if vetor_palavra == list(palavra):
         stop = True
@@ -59,6 +61,14 @@ while tentativas > 0 and not stop:
     if tentativas > 0 and not stop:
         letra_usuario = input('Digite a letra: ')
         letra_usuario = letra_usuario.upper()
+
+        while y < len(palavras_jogadas):
+            for letra_jogadas in palavras_jogadas:
+                if letra_usuario == letra_jogadas:
+                    letra_usuario = input('Letra ja jogada, digite novamente a letra: ')
+                    letra_usuario = letra_usuario.upper()
+                    y -= 1
+            y += 1
 
 
 if tentativas == 0:
