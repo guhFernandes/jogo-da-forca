@@ -10,7 +10,6 @@ while len(palavra) < 5 or len(palavra) > 10:
     palavra = palavra.upper().strip()
     arquivo.close()
 
-print(palavra)
 
 tentativas = 6
 j = i = y = 0
